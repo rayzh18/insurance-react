@@ -84,9 +84,9 @@ const Footer = () => {
 					</div>
 
 					<div>
-						<h3>Spočítat nejlepší pojkistku</h3>
+						<h3>Spočítat nejlepší pojistku</h3>
 						<button className='footer-btn'>
-							Spočítat pojkistku <img src={calculatorIcon} alt='' />
+							Spočítat pojistku <img src={calculatorIcon} alt='' />
 						</button>
 					</div>
 				</section>
