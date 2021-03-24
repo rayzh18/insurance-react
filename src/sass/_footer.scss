@@ -1,9 +1,7 @@
 .footer {
 	background-color: $dark-blue;
-	font-family: $primary-font;
 	padding: 50px 0 28px 0;
 	color: $white;
-
 	&-header {
 		display: flex;
 		align-items: center;
@@ -16,12 +14,11 @@
 		h3 {
 			opacity: 0.6;
 			font-size: 16px;
-			font-family: $primary-font;
 		}
 		.line {
 			border-left: 1px solid $white;
 			height: 30px;
-			opacity: 0.6;
+			opacity: 0.2;
 			margin: 0 16px;
 		}
 	}
