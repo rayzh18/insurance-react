@@ -1,0 +1,32 @@
+.success {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		font-size: 32px;
+		font-weight: 600;
+		color: $blue;
+		margin-bottom: 26px;
+	}
+
+	p {
+		color: $dark-blue;
+		font-size: 20px;
+	}
+
+	&-tick {
+		margin: 56px 0 26px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 140px;
+		height: 140px;
+		border-radius: 50%;
+		background-color: rgba(48, 183, 232, 0.1);
+		img {
+			width: 50%;
+		}
+	}
+}
