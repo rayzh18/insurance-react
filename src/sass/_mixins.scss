@@ -1,0 +1,21 @@
+@mixin support {
+	display: flex;
+	align-items: center;
+
+	img {
+		height: 129px;
+		opacity: 0.65;
+	}
+	p {
+		font-size: 14px;
+	}
+	h3 {
+		margin: 10px 0;
+		font-size: 32px;
+		color: $blue;
+		font-weight: 600;
+	}
+	&-comment {
+		opacity: 0.6;
+	}
+}

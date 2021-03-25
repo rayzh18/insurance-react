@@ -76,29 +76,9 @@
 		justify-content: space-evenly;
 	}
 	&-contact {
-		display: flex;
-		align-items: center;
-		// justify-content: ;
-
+		@include support;
 		:not(:last-child) {
 			margin-right: 24px;
-		}
-
-		img {
-			height: 129px;
-			opacity: 0.65;
-		}
-		p {
-			font-size: 14px;
-		}
-		h3 {
-			margin: 10px 0;
-			font-size: 32px;
-			color: $blue;
-			font-weight: 600;
-		}
-		&-comment {
-			opacity: 0.6;
 		}
 	}
 	&-end {
