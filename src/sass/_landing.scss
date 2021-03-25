@@ -1,0 +1,54 @@
+.landing {
+	&-icon-section {
+		text-align: center;
+		h3 {
+			font-size: 12px;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: $blue;
+			margin-top: 80px;
+		}
+		h2 {
+			margin-top: 12px;
+			font-size: 32px;
+			color: $dark-blue;
+			font-weight: bold;
+		}
+		p {
+			color: $dark-blue;
+			font-weight: 500;
+			line-height: 20px;
+			width: 174px;
+
+			margin-top: 13px;
+		}
+	}
+
+	&-icon {
+		height: 40px;
+		width: 40px;
+		background-color: $blue;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 13px;
+		margin: 0 auto;
+
+		img {
+			height: 20px;
+		}
+	}
+
+	&-icons-row-4 {
+		display: flex;
+		justify-content: space-between;
+		margin: 56px 0 68px 0;
+	}
+	&-icons-row-3 {
+		width: 83%;
+		margin: 0 auto 120px auto;
+		display: flex;
+		justify-content: space-around;
+	}
+}
