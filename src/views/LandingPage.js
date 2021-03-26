@@ -1,6 +1,8 @@
 import React from 'react';
 
 import wrenchIcon from '../assets/wrench-icon.svg';
+import calendarIcon from '../assets/calendar-icon.svg';
+import calculatorIcon from '../assets/calculator-icon.svg';
 import coinsIcon from '../assets/coins-icon.svg';
 import hospitalizationIcon from '../assets/hospitalization-icon.svg';
 import truckIcon from '../assets/truck-icon.svg';
@@ -36,14 +38,16 @@ const LandingPage = () => {
 								<div className='landing-main-icon'>
 									<img src={carIcon} alt='' />
 								</div>
-								<p>Pojištění extrémního sportu jízdy po dálnici D1 (v ceně)</p>
+								<p className='info1'>
+									Pojištění extrémního sportu jízdy po dálnici D1 (v ceně)
+								</p>
 							</div>
 
 							<div className='landing-main-icon-wrapper'>
 								<div className='landing-main-icon'>
 									<img src={wrenchIcon} alt='' />
 								</div>
-								<p>Asistenční služba Ve dne, v noci™</p>
+								<p className='info2'>Asistenční služba Ve dne, v noci™</p>
 							</div>
 						</div>
 					</div>
@@ -52,6 +56,38 @@ const LandingPage = () => {
 						<div className='form-header'>
 							<h2>Zjistit cenu cestovního pojištění</h2>
 						</div>
+						<h3>
+							Kam cestujete<span>*</span>
+						</h3>
+						<input type='text' placeholder='Kam cestujete' />
+						<h3>
+							Odjezd<span>*</span>
+						</h3>
+						<input type='date' />
+						<h3>
+							Návrat<span>*</span>
+						</h3>
+						<input type='date' />
+						<h3>
+							Typ cesty<span>*</span>
+						</h3>
+
+						<label>
+							<input type='radio' />
+							Turistická
+						</label>
+						<label>
+							<input type='radio' />
+							Pracovní (manuální práce)
+						</label>
+						<label>
+							<input type='radio' />
+							Pracovní (administrativní práce)
+						</label>
+
+						<button type='submit'>
+							Spočítat pojistku <img src={calculatorIcon} alt='' />
+						</button>
 					</form>
 				</div>
 			</section>
