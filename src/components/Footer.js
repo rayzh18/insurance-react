@@ -96,12 +96,12 @@ const Footer = () => {
 					<div>
 						<p>Telefon</p>
 						<h3>740 730 720</h3>
-						<p className='footer-contact-comment'>Pracovní dny: 8–18 hod</p>
+						<p className='comment'>Pracovní dny: 8–18 hod</p>
 					</div>
 					<div>
 						<p>Email</p>
 						<h3>ecestovko@info.cz</h3>
-						<p className='footer-contact-comment'>Odpovíme do 24 hodin</p>
+						<p className='comment'>Odpovíme do 24 hodin</p>
 					</div>
 				</section>
 
