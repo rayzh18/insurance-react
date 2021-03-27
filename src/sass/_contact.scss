@@ -1,0 +1,54 @@
+.contact {
+	background-image: linear-gradient(#eaf1ff, $white);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: $dark-blue;
+	text-align: center;
+
+	h1 {
+		font-size: 48px;
+		font-weight: 600;
+		padding: 56px 0 16px 0;
+	}
+
+	.header-text {
+		font-size: 14px;
+		width: 406px;
+		margin-bottom: 48px;
+	}
+
+	&-content {
+		margin: 0 0 96px 100px;
+		@include support;
+		p {
+			margin-bottom: 10px;
+		}
+		img {
+			margin: 0 24px;
+		}
+		.left {
+			text-align: right;
+		}
+		.right {
+			text-align: left;
+		}
+	}
+
+	.billing {
+		margin-bottom: 100px;
+		h2 {
+			font-size: 32px;
+			margin-bottom: 24px;
+		}
+		p {
+			font-size: 18px;
+			line-height: 24px;
+			margin-bottom: 35px;
+		}
+
+		span {
+			font-weight: 600;
+		}
+	}
+}
