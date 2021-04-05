@@ -1,0 +1,148 @@
+.choose-company {
+	display: flex;
+	justify-content: center;
+	.setting-field {
+		margin-right: 48px;
+		min-width: 290px;
+		padding: 20px;
+		padding-bottom: 0;
+		border: 1px solid #DBE3F2;
+		border-radius: 6px;
+		background: #F4F7FF;
+		.toggle-btn-group {
+			.item-header {
+				display: flex;
+				justify-content: space-between;
+				background-color: unset;
+				h3 {
+					font-size: 16px;
+				}
+			}
+			.item-header:hover {
+				cursor: pointer;
+			}
+		}
+		.setting-item{
+			width: 100%;
+			margin-bottom: 20px;
+			.toggle-btn-group.card-header {
+				padding: 0;
+				border-bottom: unset;
+				background: unset;
+			}
+
+			.input-text {
+				height: 40px;
+				font-size: 14px;
+			}
+			border-bottom: solid 1px rgba(33, 63, 118, 0.2);
+		}
+
+	}
+	.status-part {
+		min-width: 704px;
+		margin-bottom: 50px;
+		.img-contain {
+			height: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				width: 90%;
+			}
+		}
+		.price {
+			color: #213F76;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.vice {
+			text-decoration: underline;
+			color: #213F76;
+		}
+		.company-contain {
+			justify-content: space-around;
+		}
+		table {
+			margin-top: 10px;
+			width: 100%;
+			
+			th {
+				justify-content: space-around;
+				width: 100%;
+				margin-right: 0;
+				margin-left: 0;
+				background: #213F76;
+				border-radius: 6px 6px 0px 0px;
+				td {
+					padding-bottom: 15px;
+					padding-top: 15px;
+					color: white;
+					font-size: 14px;
+				}
+			}
+			td {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			tbody {
+				box-shadow: 0 0 0 1px #D0D6E2;
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+				tr {
+					margin-right: 0;
+    				margin-left: 0;
+					td {
+						font-size: 14px;
+						color: #213F76;
+						padding: 12px 6px;
+						text-align: center;
+						img {
+							width: 15px;
+						}
+					}
+				}
+				tr {
+					td:nth-of-type(2n) {
+						background: #F6F7FA;
+					}
+				}
+				tr.row {
+					justify-content: space-around;
+				}
+			}
+		}
+	}
+}
+@media(max-width: 768px){
+	.choose-company {
+		display: block;
+		.setting-field {
+			margin-right: unset;
+		}
+		.status-part {
+			min-width: unset;
+			width: 100%;
+			overflow: scroll;
+			// .img-contain{
+			// 	margin-top: 20px;
+			// 	padding: 20px;
+			// 	img {
+			// 		width: 50%;
+			// 		margin-bottom: 10px;
+			// 	}
+			// } 
+			.company-contain {
+				min-width: 650px;
+				padding-left: 16px;
+			}
+			.table-contain {
+				padding-left: 16px;
+				table {
+					min-width: 650px;
+				}
+			}
+		}
+	}
+}

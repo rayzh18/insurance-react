@@ -42,7 +42,7 @@
 
 			.form-header {
 				background-color: $blue;
-				padding: 24px 52px;
+				padding: 24px 48px;
 				border-radius: 12px 12px 0 0;
 				h2 {
 					font-size: 20px;
@@ -52,7 +52,7 @@
 			}
 
 			button {
-				margin: 42px auto 39px auto;
+				margin-top: 10px;
 				@include button;
 				width: 368px;
 				height: 48;
@@ -160,5 +160,52 @@
 		margin: 0 auto 120px auto;
 		display: flex;
 		justify-content: space-around;
+	}
+}
+
+@media(max-width: 768px){
+	.landing-main-section .landing-left {
+		width: 100%;
+		.landing-text{
+			width: 100%;
+		}
+	}
+	.landing-layout {
+		display: block;
+	}
+	.landing-main-section-icons {
+		display: block;
+		.landing-main-icon-wrapper{
+			margin-bottom: 20px;
+		}
+	}
+	.landing-main-section {
+		padding: 50px 0;
+		.landing-left h1{
+			font-size: 30px;
+		}
+	}
+	.landing-main-section .landing-right{
+		margin-top: 30px;
+		width: 100%;
+		button {
+			width: 100%;
+		}
+	}
+	.landing-icons-row-4 {
+		display: block;
+		margin-bottom: 0;
+	}
+	.landing-icons-row-3 {
+		display: block;
+	}
+	.landing-icon-section p {
+		width: unset;
+	}
+	.landing-icon-wrapper {
+		margin-bottom: 20px;
+	}
+	.landing-main-section .landing-main-icon-wrapper p {
+		margin-bottom: 0;
 	}
 }

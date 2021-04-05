@@ -1,7 +1,6 @@
 import React from 'react';
 
 import wrenchIcon from '../assets/wrench-icon.svg';
-import calendarIcon from '../assets/calendar-icon.svg';
 import calculatorIcon from '../assets/calculator-icon.svg';
 import coinsIcon from '../assets/coins-icon.svg';
 import hospitalizationIcon from '../assets/hospitalization-icon.svg';
@@ -56,38 +55,54 @@ const LandingPage = () => {
 						<div className='form-header'>
 							<h2>Zjistit cenu cestovního pojištění</h2>
 						</div>
-						<h3>
-							Kam cestujete<span>*</span>
-						</h3>
-						<input type='text' placeholder='Kam cestujete' />
-						<h3>
-							Odjezd<span>*</span>
-						</h3>
-						<input type='date' />
-						<h3>
-							Návrat<span>*</span>
-						</h3>
-						<input type='date' />
-						<h3>
-							Typ cesty<span>*</span>
-						</h3>
-
-						<label>
-							<input type='radio' />
-							Turistická
-						</label>
-						<label>
-							<input type='radio' />
-							Pracovní (manuální práce)
-						</label>
-						<label>
-							<input type='radio' />
-							Pracovní (administrativní práce)
-						</label>
-
-						<button type='submit'>
-							Spočítat pojistku <img src={calculatorIcon} alt='' />
-						</button>
+						<div className='form-body'>
+							<div className='form-group'>
+								<h3 className='m-b-3'>
+									Kam cestujete<span>*</span>
+								</h3>
+								<input className='input-text w-100 p-11' type='text' placeholder='Kam cestujete' />
+							</div>
+							<div className='item-center'>
+								<div className='form-group w-50 m-r-5'>
+									<h3 className='m-b-3'>
+										Odjezd<span>*</span>
+									</h3>
+									<input className='input-text w-100 p-11' placeholder='Odjezd' type='date' />
+								</div>
+								<div className='form-group w-50'>
+									<h3 className='m-b-3'>
+										Návrat<span>*</span>
+									</h3>
+									<input className='input-text w-100 p-11' placeholder='Návrat' type='date' />
+								</div>
+							</div>
+							<div className='trip-type-box'>
+								<h3 className='m-b-5'>
+									Typ cesty<span>*</span>
+								</h3>
+								<div className='form-group'>
+									<input type='radio' id='tourist' name='trip_type' className='input-radio' />
+									<label for='tourist'>
+										Turistická
+									</label>
+								</div>
+								<div className='form-group'>
+									<input type='radio' id='manual-work' name='trip_type' className='input-radio' />
+									<label for='manual-work'>
+										Pracovní (manuální práce)
+									</label>
+								</div>
+								<div className='form-group'>
+									<input type='radio' id='administrative-work' name='trip_type' className='input-radio' />
+									<label for='administrative-work'>
+										Pracovní (administrativní práce)
+									</label>
+								</div>
+							</div>
+							<button type='submit'>
+								Spočítat pojistku <img src={calculatorIcon} alt='' />
+							</button>
+						</div>
 					</form>
 				</div>
 			</section>

@@ -8,10 +8,9 @@ import {
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ProgressBar from './components/ProgressBar';
-
+import TravelDetailPage from './views/TravelDetailPage';
+import ChooseCompanyPage from './views/ChooseCompanyPage';
 import LandingPage from './views/LandingPage';
-import FormsPage from './views/FormsPage';
 import SuccessPage from './views/SuccessPage';
 
 const App = () => {
@@ -19,21 +18,20 @@ const App = () => {
 		<>
 			<Router>
 				<Navbar />
-
 				<Switch>
 					<Route exact path='/'>
 						<LandingPage />
 					</Route>
-
 					<Route path='/success'>
 						<SuccessPage></SuccessPage>
 					</Route>
-
-					<Route path='/forms'>
-						<FormsPage />
+					<Route path='/travel_detail'>
+						<TravelDetailPage></TravelDetailPage>
+					</Route>
+					<Route path='/choose_company'>
+						<ChooseCompanyPage></ChooseCompanyPage>
 					</Route>
 				</Switch>
-
 				<Footer />
 			</Router>
 		</>

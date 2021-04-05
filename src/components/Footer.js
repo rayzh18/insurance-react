@@ -11,7 +11,9 @@ const Footer = () => {
 		<footer className='footer'>
 			<div className='container'>
 				<section className='footer-header'>
-					<h2>ecestovko</h2>
+					<a href='/'>
+						<h2>ecestovko</h2>
+					</a>
 					<span className='line'></span>
 					<h3>Výhodné cestovní pojištění jednoduše</h3>
 				</section>
