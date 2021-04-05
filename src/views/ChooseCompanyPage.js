@@ -174,9 +174,9 @@ const ChooseCompanyPage = () => {
 					</div>
 					<div className='status-part'>
 						<div className='row company-contain'>
-							<div className='w-16'>
+							<div className='w-15'>
 							</div>
-							<div className='w-16 content-center'>
+							<div className='w-15 content-center'>
 								<div className='img-contain'>
 									<img src={img_assistance}></img>
 								</div>
@@ -184,7 +184,7 @@ const ChooseCompanyPage = () => {
 								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
-							<div className='w-16 content-center'>
+							<div className='w-15 content-center'>
 								<div className='img-contain'>
 									<img src={img_union}></img>
 								</div>
@@ -192,7 +192,7 @@ const ChooseCompanyPage = () => {
 								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
-							<div className='w-16 content-center'>
+							<div className='w-15 content-center'>
 								<div className='img-contain'>
 									<img src={img_slavia}></img>
 								</div>
@@ -200,7 +200,7 @@ const ChooseCompanyPage = () => {
 								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
-							<div className='w-16 content-center'>
+							<div className='w-15 content-center'>
 								<div className='img-contain'>
 									<img src={img_uniqa}></img>
 								</div>
@@ -208,7 +208,7 @@ const ChooseCompanyPage = () => {
 								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
-							<div className='w-16 content-center'>
+							<div className='w-15 content-center'>
 								<div className='img-contain'>
 									<img src={img_fifth}></img>
 								</div>
@@ -220,231 +220,231 @@ const ChooseCompanyPage = () => {
 						<div className='row table-contain'>
 							<table>
 								<th className='row'>
-									<td className='w-16'>Název</td>
-									<td className='w-16'>Komfort</td>
-									<td className='w-16'>Dominant</td>
-									<td className='w-16'>Střední</td>
-									<td className='w-16'>Vyšší</td>
-									<td className='w-16'>Vyšší</td>
+									<td className='w-15'>Název</td>
+									<td className='w-15'>Komfort</td>
+									<td className='w-15'>Dominant</td>
+									<td className='w-15'>Střední</td>
+									<td className='w-15'>Vyšší</td>
+									<td className='w-15'>Vyšší</td>
 								</th>
 								<tbody>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Covid-19 pojištění
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Autoasistence
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											lze pojistit
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											lze pojistit
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											lze pojistit
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Léčebné výlohy
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											5.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											5.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											5.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											5.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											5.000.000
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Asistenční služby
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Úrazové pojištění
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											500.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											300.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											300.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											200.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											250.000
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Pojištění zavazadel
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											20.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											25.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											25.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											10.000
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Pojištění odpovědnosti
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											4.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											3.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											5.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											2.000.000
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											4.000.000
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Rekreační sporty
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Zimní sporty
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
-											<img src={icon_success}></img>
-										</td>
-									</tr>
-									<tr className='row'>
-										<td className='w-16'>
-											Rizikové sporty
-										</td>
-										<td className='w-16'>
-											<img src={icon_failed}></img>
-										</td>
-										<td className='w-16'>
-											<img src={icon_failed}></img>
-										</td>
-										<td className='w-16'>
-											<img src={icon_failed}></img>
-										</td>
-										<td className='w-16'>
-											<img src={icon_failed}></img>
-										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
 									</tr>
 									<tr className='row'>
-										<td className='w-16'>
+										<td className='w-15'>
 											Rizikové sporty
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
+											<img src={icon_failed}></img>
+										</td>
+										<td className='w-15'>
+											<img src={icon_failed}></img>
+										</td>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
-										<td className='w-16'>
+									</tr>
+									<tr className='row'>
+										<td className='w-15'>
+											Rizikové sporty
+										</td>
+										<td className='w-15'>
 											<img src={icon_failed}></img>
 										</td>
-										<td className='w-16'>
+										<td className='w-15'>
+											<img src={icon_failed}></img>
+										</td>
+										<td className='w-15'>
+											<img src={icon_success}></img>
+										</td>
+										<td className='w-15'>
+											<img src={icon_failed}></img>
+										</td>
+										<td className='w-15'>
 											<img src={icon_success}></img>
 										</td>
 									</tr>

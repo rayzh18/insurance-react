@@ -12,6 +12,7 @@ import TravelDetailPage from './views/TravelDetailPage';
 import ChooseCompanyPage from './views/ChooseCompanyPage';
 import LandingPage from './views/LandingPage';
 import SuccessPage from './views/SuccessPage';
+import ContactPage from './views/ContactPage';
 
 const App = () => {
 	return (
@@ -30,6 +31,9 @@ const App = () => {
 					</Route>
 					<Route path='/choose_company'>
 						<ChooseCompanyPage></ChooseCompanyPage>
+					</Route>
+					<Route exact path='/contact'>
+						<ContactPage />
 					</Route>
 				</Switch>
 				<Footer />
