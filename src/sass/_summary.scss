@@ -1,0 +1,121 @@
+.summary-page {
+	.summary-left {
+		min-width: 432px;
+		margin-right: 50px;
+		.summary-items {
+			margin-bottom: 30px;
+			h3 {
+				font-size: 20px;
+				font-weight: bold;
+				color: #213F76;
+			}
+			.summary-item {
+				display: flex;
+				justify-content: space-between;
+				div{
+					font-size: 16px;
+					color: #213F76;
+				}
+				.value{
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.summary-right {
+		min-width: 568px;
+		background-color: #F4F7FF;
+		border: 1px solid #DBE3F2;
+		border-radius: 6px;
+		padding: 32px;
+		margin-bottom: 30px;
+		.summary-items {
+			margin-bottom: 30px;
+			h3 {
+				font-size: 20px;
+				font-weight: bold;
+				color: #213F76;
+			}
+			.summary-item {
+				display: flex;
+				justify-content: space-between;
+				div{
+					font-size: 16px;
+					color: #213F76;
+				}
+				.value{
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.summary-right ~ .form-group a {
+		text-decoration: underline;
+	}
+	.travel-detail .detail-main.personal-info-contain {
+		width: unset;
+		margin-bottom: 50px;
+	}
+	// .modal-dialog.summary-modal {
+	// 	margin: 130px auto;
+	// }
+}
+@media (min-width: 576px) {
+	.modal-dialog.summary-modal {
+		max-width: 550px;
+		margin: 180px auto;
+		.modal-content {
+			padding: 40px 74px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			h3 {
+				font-size: 24px;
+				color: #213F76;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+			.button-orange {
+				width: 210px;
+			}
+		}
+	}
+}
+
+@media(max-width: 768px){
+	.summary-page {
+		.item-one-line {
+			display: block;
+			padding: 15px;
+			.summary-left {
+				width: 100%;
+				min-width: unset;
+    			margin-right: 0;
+			}
+			.summary-right {
+				width: 100%;
+				min-width: unset;
+				padding: 20px;
+			}
+		}
+	}
+	.modal-dialog.summary-modal {
+		max-width: unset;
+		width: 90% ;
+		margin: 80px auto;
+		.modal-content {
+			padding: 30px 30px;
+			align-items: center;
+			h3 {
+				text-align: center;
+				font-size: 24px;
+				color: #213F76;
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+			.button-orange {
+				width: 210px;
+			}
+		}
+	}
+}

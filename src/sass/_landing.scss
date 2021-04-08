@@ -51,7 +51,7 @@
 				}
 			}
 
-			button {
+			button.calculate-fuse {
 				margin-top: 10px;
 				@include button;
 				width: 368px;
@@ -188,7 +188,7 @@
 	.landing-main-section .landing-right{
 		margin-top: 30px;
 		width: 100%;
-		button {
+		button.calculate-fuse {
 			width: 100%;
 		}
 	}

@@ -60,6 +60,9 @@
 			text-decoration: underline;
 			color: #213F76;
 		}
+		.vice:hover {
+			cursor: pointer;
+		}	
 		.company-contain {
 			justify-content: space-around;
 		}
@@ -67,7 +70,7 @@
 			margin-top: 10px;
 			width: 100%;
 			
-			th {
+			thead {
 				justify-content: space-around;
 				width: 100%;
 				margin-right: 0;
@@ -115,6 +118,79 @@
 		}
 	}
 }
+.modal-dialog.choose-company-modal {
+	table {
+		margin-bottom: 25px;
+		td {
+			padding: 16px;
+			font-size: 14px;
+			color: #213F76;
+			border: solid 0.1px #d0d6e2;
+			border-collapse: collapse;
+			border-right: none;
+			border-bottom: none;
+			word-break: break-word;
+		}
+		tbody tr:first-child {
+			text-align: center;
+			td {
+				border: none;
+			}
+			td:last-child {
+				border-left: solid 1px #d0d6e2;
+			}
+			border-radius: 6px 6px 0 0;
+			background-color: #F3F5F7;
+			border: solid 1px #F3F5F7;
+		}
+		td.strong {
+			font-weight: bold;
+		}
+		tr {
+			td:not(:first-child) {
+				text-align: center;
+			}
+		}
+		tr td:last-child {
+			border-right: solid 0.1px #d0d6e2;
+		}
+		tr:last-child td {
+			border-bottom: solid 0.1px #d0d6e2;
+		}
+	}
+}
+.modal-dialog.choose-company-modal {
+	max-width: 1040px;
+	.modal-content {
+		max-height: 729px;
+		padding: 32px 40px;
+		color: #213F76;
+		overflow-y: scroll;
+		.header {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 22px;
+		}
+		.paragraph-header {
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+		.content {
+			font-size: 14px;
+			margin-bottom: 18px;
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+	::-webkit-scrollbar {display:none;} /* Safari */
+	::-moz-scrollbars {display:none;}
+	::-o-scrollbar {display:none;} /* opera */
+	::-google-ms-scrollbar {display:none;}
+	::-khtml-scrollbar {display:none;}
+	scrollbar-width: none;
+}
 @media(max-width: 768px){
 	.choose-company {
 		display: block;
@@ -144,5 +220,13 @@
 				}
 			}
 		}
+	}
+	.modal-dialog.choose-company-modal .modal-content {
+		padding: 20px 15px;
+	}
+	.modal-dialog.choose-company-modal table {
+		width: 90%;
+		margin: auto;
+		margin-bottom: 20px;
 	}
 }

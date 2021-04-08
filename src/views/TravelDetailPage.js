@@ -3,7 +3,40 @@ import rightArrowIcon from '../assets/right-arrow.svg';
 
 const TravelDetailPage = () => {
 
-	const [count_insured_persons , setCountInsuredPersons] = useState(0);
+	const [count_insured_persons, setCountInsuredPersons] = useState(1);
+	const [age_data, setAgeData] = useState([1]);
+
+	const handleCountInsurance = (operation) => {
+		if(operation == '+') {
+			setAgeData([...age_data, 1]);
+			setCountInsuredPersons(count_insured_persons + 1);
+		}
+		else if(operation == '-' && count_insured_persons > 1) {
+			let temp = age_data.slice(0, count_insured_persons-1);
+			setAgeData(temp);
+			setCountInsuredPersons(count_insured_persons - 1);
+		}
+	}
+	const changeAgeData = (value, index) => {
+		if(value > 0) {
+			let temp = age_data;
+			temp[index] = value;
+			setAgeData([...temp]);
+		}
+	}
+
+	const handleClickSecondtab = () => {
+		// history.push('/choose_company')
+	}
+
+	const age_components = age_data && 
+				age_data.map((item, index) => (
+					<div className='person-flight form-group' key={index}>
+						<label>Osobě č.{index + 1} je</label>
+						<input type='number' value={item ?? 0} onChange={(e) => changeAgeData(parseInt(e.target.value), index)}></input>
+						<label>let</label>
+					</div>
+				))
 
 	return (
 		<main className='travel-detail'>
@@ -17,7 +50,7 @@ const TravelDetailPage = () => {
 					<a className='item-detail checked'>
 						1.Údaje o cestě
 					</a>
-					<a href='/choose_company' className='item-detail'>
+					<a onClick={handleClickSecondtab} className='item-detail'>
 						2.Výběr pojištovny
 					</a>
 					<a className='item-detail'>
@@ -38,7 +71,7 @@ const TravelDetailPage = () => {
 					<a className='item-detail checked'>
 						1.Údaje o cestě
 					</a>
-					<a href='/choose_company' className='item-detail'>
+					<a className='item-detail'>
 						2.Výběr pojištovny
 					</a>
 					<a className='item-detail'>
@@ -83,19 +116,19 @@ const TravelDetailPage = () => {
 					</h3>
 					<div className='form-group'>
 						<input type='radio' id='tourist' name='trip_type' className='input-radio' />
-						<label for='tourist'>
+						<label htmlFor='tourist'>
 							Turistická
 									</label>
 					</div>
 					<div className='form-group'>
 						<input type='radio' id='manual-work' name='trip_type' className='input-radio' />
-						<label for='manual-work'>
+						<label htmlFor='manual-work'>
 							Pracovní (manuální práce)
 									</label>
 					</div>
 					<div className='form-group'>
 						<input type='radio' id='administrative-work' name='trip_type' className='input-radio' />
-						<label for='administrative-work'>
+						<label htmlFor='administrative-work'>
 							Pracovní (administrativní práce)
 									</label>
 					</div>
@@ -105,13 +138,13 @@ const TravelDetailPage = () => {
 						Sport<span>*</span>
 					</h3>
 					<div className='form-group'>
-						<label className='checkbox-container' for='recreational'>Rekreační
+						<label className='checkbox-container' htmlFor='recreational'>Rekreační
 							<input type='checkbox' id='recreational' name='' className='input-checkbox' />
 							<span className='checkmark'></span>
 						</label>
 					</div>
 					<div className='form-group'>
-						<label className='checkbox-container' for='risky'>Rizikový
+						<label className='checkbox-container' htmlFor='risky'>Rizikový
 							<input type='checkbox' id='risky' name='' className='input-checkbox' />
 							<span className='checkmark'></span>
 						</label>
@@ -122,23 +155,14 @@ const TravelDetailPage = () => {
 						Pojištěné osoby<span>*</span>
 					</h3>
 					<div className='count-box'>
-						<div onClick={() => {if(count_insured_persons > 0) setCountInsuredPersons(count_insured_persons-1)}} className='number-button'><i class="fas fa-minus"></i></div>
+						<div onClick={() => handleCountInsurance('-')} className='number-button'><i className="fas fa-minus"></i></div>
 						<div>{count_insured_persons}</div>
-						<div onClick={() => setCountInsuredPersons(count_insured_persons+1)} className='number-button'><i class="fas fa-plus"></i></div>
+						<div onClick={() => handleCountInsurance('+')} className='number-button'><i className="fas fa-plus"></i></div>
 					</div>
 				</div>
-				<div className='person-flight form-group'>
-					<label>Osobě č.1 je</label>
-					<input type='number'></input>
-					<label>let</label>
-				</div>
-				<div className='person-flight form-group'>
-					<label>Osobě č.2 je</label>
-					<input type='number'></input>
-					<label>let</label>
-				</div>
+				{age_components}
 				<div className='form-group'>
-					<label className='checkbox-container' for='one-family'>Tvoříme jednu rodinu
+					<label className='checkbox-container' htmlFor='one-family'>Tvoříme jednu rodinu
 						<input type='checkbox' id='one-family' name='' className='input-checkbox' />
 						<span className='checkmark'></span>
 					</label>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import img_assistance from '../assets/assistance.png';
@@ -9,8 +9,17 @@ import img_fifth from '../assets/fifth.png';
 import icon_success from '../assets/green-success-icon.svg';
 import icon_failed from '../assets/red-failed-icon.svg'
 import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal';
 
 const ChooseCompanyPage = () => {
+
+	const [isShowModal, setShowModal] = useState(false);
+
+	const showModal = () => {
+		setShowModal(true);
+	}
+
+	console.log("ChooseCompanyPage");
 
 	return (
 		<main className='travel-detail'>
@@ -21,7 +30,7 @@ const ChooseCompanyPage = () => {
 				<div className='items'>
 					<div className='left-color-fill'>
 					</div>
-					<a href='/travel_detail' className='item-detail checked'>
+					<a className='item-detail checked'>
 						1.Údaje o cestě
 					</a>
 					<a className='item-detail checked'>
@@ -42,7 +51,7 @@ const ChooseCompanyPage = () => {
 			</div>
 			<div className='tab-part-mobile'>
 				<div className='items'>
-					<a href='/travel_detail' className='item-detail checked'>
+					<a className='item-detail checked'>
 						1.Údaje o cestě
 					</a>
 					<a className='item-detail checked'>
@@ -103,19 +112,19 @@ const ChooseCompanyPage = () => {
 												</h3>
 												<div className=''>
 													<input type='radio' id='tourist' name='trip_type' className='input-radio' />
-													<label for='tourist'>
+													<label htmlFor='tourist'>
 														Turistická
 													</label>
 												</div>
 												<div className=''>
 													<input type='radio' id='manual-work' name='trip_type' className='input-radio' />
-													<label for='manual-work'>
+													<label htmlFor='manual-work'>
 														Pracovní (manuální práce)
 													</label>
 												</div>
 												<div className=''>
 													<input type='radio' id='administrative-work' name='trip_type' className='input-radio' />
-													<label for='administrative-work'>
+													<label htmlFor='administrative-work'>
 														Pracovní (administrativní práce)
 													</label>
 												</div>
@@ -126,19 +135,19 @@ const ChooseCompanyPage = () => {
 												</h3>
 												<div className=''>
 													<input type='radio' id='recreational' name='sport_type' className='input-radio' />
-													<label for='recreational'>
+													<label htmlFor='recreational'>
 														Rekreační
 													</label>
 												</div>
 												<div className=''>
 													<input type='radio' id='risky' name='sport_type' className='input-radio' />
-													<label for='risky'>
+													<label htmlFor='risky'>
 														Rizikový
 													</label>
 												</div>
 												<div className=''>
 													<input type='radio' id='extreme' name='sport_type' className='input-radio' />
-													<label for='extreme'>
+													<label htmlFor='extreme'>
 														Extrémní
 													</label>
 												</div>
@@ -182,7 +191,7 @@ const ChooseCompanyPage = () => {
 								</div>
 								<div className='price'>89 Kč</div>
 								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
-								<a className='vice'>Vice</a>
+								<a onClick={() => showModal()} className='vice'>Vice</a>
 							</div>
 							<div className='w-15 content-center'>
 								<div className='img-contain'>
@@ -219,14 +228,16 @@ const ChooseCompanyPage = () => {
 						</div>
 						<div className='row table-contain'>
 							<table>
-								<th className='row'>
-									<td className='w-15'>Název</td>
-									<td className='w-15'>Komfort</td>
-									<td className='w-15'>Dominant</td>
-									<td className='w-15'>Střední</td>
-									<td className='w-15'>Vyšší</td>
-									<td className='w-15'>Vyšší</td>
-								</th>
+								<thead className='row'>
+									<tr className='flex w-100'>
+										<td className='w-15'>Název</td>
+										<td className='w-15'>Komfort</td>
+										<td className='w-15'>Dominant</td>
+										<td className='w-15'>Střední</td>
+										<td className='w-15'>Vyšší</td>
+										<td className='w-15'>Vyšší</td>
+									</tr>
+								</thead>
 								<tbody>
 									<tr className='row'>
 										<td className='w-15'>
@@ -454,6 +465,135 @@ const ChooseCompanyPage = () => {
 					</div>
 				</div>
 			</div>
+			<Modal 
+				show={isShowModal} onHide={() => setShowModal(false)}
+				dialogClassName="choose-company-modal"
+				centered
+			>
+				<div className='header'>Cestovní pojištění Assistance</div>
+
+				<div className='paragraph-header'>Cestovní pojištění Assistance</div>
+				<div className='content'>
+					Jednorázové cestovní pojištění - nejběžnější typ pojištění pro cestu do zahraničí, která může trvat od 1 dne až do 1 roku. 
+				</div>
+				<div className='content'>
+					Roční cestovní pojištění s opakovanými výjezdy - pokud jezdíte za hranice často, doporučujeme právě tuto variantu. Pojištění si tak sjednáte jednorázově a jste bez starostí před jednotlivými cestami. Je platné pro neomezený početvý jezdů (každý v rozmezí od 1 do 90ti dnů).
+				</div>
+
+				<div className='paragraph-header'>Platnost?</div>
+				<div className='content'>už 4 hodiny po zadání platby pojistného na účet Top-Pojištění.cz.</div>
+
+				<div className='paragraph-header'>Nabízené varianty:</div>
+				<div className='content'><span>Reference</span> – Krátké výlety do sousedních zemích (např. návštěva rodiny, výlet za nákupy apod.). Limity 2,5 milionu Kč na léčebné výlohy, odpovědnost za škodu není v ceně. V ceně pojištění nejsou další důležitá rizika jako je například pojištění odpovědnosti. </div>
+				<div className='content'><span>Komfort</span> – Klidná nenáročná dovolená po Evropě. Limity 5 milionů Kč na léčebné výlohy, 4 miliony Kč na způsobené škody na zdraví. Limity 5 milionů Kč na léčebné výlohy, odpovědnost za škodu není v ceně. V ceně i pojištění zavazadel, právní asistence, odpovědnost za škodu na majetku. </div>
+				<div className='content'><span>Excelent</span> – Hoďte starosti za hlavu a užívejte si naplno bez ohledu kam cestujete. Excelent je ta správná volba pro jistotu a klid na cestách. Nejvyšší limity: 500 milionů Kč na léčebné výlohy vč. nákladů na repatriaci či zásahu horské služby, 25 milionů Kč na způsobené škody na zdraví. V ceně navíc i pojištění zavazadel, právní asistence, odpovědnost za škodu na majetku, či pojištění cesty letadlem. A k tomu chráníme i vaše domácí mazlíčky.</div>
+
+				<table>
+					<tbody>
+						<tr className="row">
+							<td className="w-25 strong">Předmět pojištění</td>
+							<td className="w-75 strong">Limit pojistného plnění</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25 strong">
+								Pojistný program
+							</td>
+							<td className="w-25 strong">
+								Reference
+							</td>
+							<td className="w-25 strong">
+								Komfort
+							</td>
+							<td className="w-25 strong">
+								Excelent
+							</td>
+						</tr>
+						<tr className="row">
+							<td className="w-100 strong">
+								Pojištění léčebných výloh (PLV)
+							</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">
+								Celkový limit
+							</td>
+							<td className="w-25">
+								2.500.000 Kč
+							</td>
+							<td className="w-25">
+								5.000.000 Kč
+							</td>
+							<td className="w-25">
+								500.000.000 Kč
+							</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">Repatriace a transporty</td>
+							<td className="w-75">Reálné náklady do limitu PLV</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">
+								Zuby
+							</td>
+							<td className="w-25">
+								6.000 Kč
+							</td>
+							<td className="w-25">
+								11.000 Kč
+							</td>
+							<td className="w-25">
+								13.000 Kč
+							</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">Návštěva rodinného příslušníka</td>
+							<td className="w-75">Reálné náklady do limitu PLV</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">
+								Ubytování doprovázející osoby	
+							</td>
+							<td className="w-25">
+								100 EUR / noc; max. 10 nocí
+							</td>
+							<td className="w-25">
+								150 EUR / noc; max. 10 nocí
+							</td>
+							<td className="w-25">
+								100 EUR / noc; max. 10 noc
+							</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">
+								Limit na ošetření zubů
+							</td>
+							<td className="w-25">
+								6.000 Kč
+							</td>
+							<td className="w-25">
+								6.000 Kč
+							</td>
+							<td className="w-25">
+								6.000 Kč
+							</td>
+						</tr>
+						<tr className="row">
+							<td className="w-25">Doprava doprovázející osoby</td>
+							<td className="w-75">Reálné náklady do limitu PLV</td>
+						</tr>
+					</tbody>
+				</table>
+				<div className='paragraph-header'>Pojištění lze sjednat</div>
+				<div className='content'>
+				pro cesty do 365 dnů <br/>
+				pro cesty jak po Evropě, tak po celém světě včetně USA a Kanady <br/>
+				pro cesty turistické i pracovní (administrativní i manuální činnosti) <br/>
+				při provozování rekreačních, zimních, rizikových sportů <br/>
+				při účasti na organizovaných soutěžích <br/>
+				pojištění storna <br/>
+				i pro cesty do ČR <br/>
+				</div>
+			</Modal>
 		</main>
 	);
 };

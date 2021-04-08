@@ -2,6 +2,7 @@
 	.title {
 		font-size: 20px;
 		color: #213F76;
+		font-weight: bold;
 	}
 	.header-part {
 		padding-top: 24px;
@@ -33,7 +34,8 @@
 			justify-content: center;
 			.item-detail {
 				position: relative;
-				padding: 20px 30px 20px 30px;
+				// padding: 20px 30px 20px 30px;
+				padding: 20px 45px;
 				color: #7689AD;
 				border: solid 1px #7689AD;
 				border-right: none;
@@ -51,6 +53,7 @@
 				border: none;
 				border-right: none;
 				border-left: none;
+				padding: 20px 45px;
 			}
 			.item-detail::before {
 				content: '';
@@ -89,7 +92,7 @@
 				content: '';
 				width: 0;
 				height: 0;
-				right: -16px;
+				right: -15px;
 				top: 0;
 				bottom: 0;
 				border-style: solid;
@@ -116,8 +119,10 @@
 			span {
 				color: #30B6E8;
 				font-size: 32px;
+				font-weight: bold;
 			}
 			h3 {
+				font-weight: bold;
 				font-size: 32px;
 				margin-bottom: 0;
 			}

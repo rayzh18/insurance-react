@@ -4,6 +4,7 @@ import { slide as Menu } from 'react-burger-menu'
 import calculatorIcon from '../assets/calculator-icon.svg';
 
 const Navbar = () => {
+	console.log('hello');
 	return (
 		<>
 			<nav className='navbar'>

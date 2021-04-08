@@ -8,6 +8,11 @@
 @import 'success';
 @import 'travel_detail';
 @import 'choose_company';
+@import 'personal_info';
+@import 'summary';
+@import 'payment';
+@import 'contact';
+@import 'general';
 
 * {
 	box-sizing: border-box;
@@ -45,6 +50,15 @@ body {
 	width: 15%;
 }
 
+.w-25 {
+	width: 25%;
+}
+
+.w-75 {
+	width: 75%;
+}
+
+
 .p-11 {
 	padding: 11px;
 }
@@ -56,6 +70,9 @@ body {
 .flex-align-center {
 	display: flex;
 	align-items: center;
+}
+.flex {
+	display: flex;
 }
 .form-body {
 	padding: 24px;
@@ -76,7 +93,9 @@ body {
 		}
 	}
 }
-
+input:focus {
+	outline: none;
+}
 //radio button start
 .input-radio {
 	display: none;
@@ -99,6 +118,7 @@ body {
 	+ label {
 		position: relative;
     	margin-left: 20px;
+		color: #213F76;
 	}
 }
 .input-radio:checked + *::before {
@@ -109,6 +129,7 @@ body {
 //date picker start
 input[type="date"] {
 	position: relative;
+	color: rgba(33, 63, 118, 0.4);
 }
 input[type="date"]::-webkit-inner-spin-button {
 	opacity: 0
@@ -133,7 +154,7 @@ input[type="date"].small {
 }
 .checkmark {
 	position: absolute;
-	top: 0;
+	top: 3px;
 	left: 0;
 	height: 17px;
 	width: 17px;
@@ -151,6 +172,9 @@ input[type="date"].small {
 	padding-left: 27px;
 	font-size: 14px;
 	color: #213F76;
+}
+.checkbox-container:hover {
+	cursor: pointer;
 }
 .checkbox-container input:checked ~ .checkmark {
 	background-color: #30B6E8;
@@ -212,6 +236,10 @@ input[type="date"].small {
 	justify-content: center;
 	align-items: center;
 }
+.item-one-line {
+	display: flex;
+	justify-content: center;
+}
 //person flight start
 .person-flight {
 	display: flex;
@@ -254,6 +282,9 @@ input[type="date"].small {
 	img {
 		padding-left: 12px;
 	}
+}
+.button-orange:focus {
+	outline: none;
 }
 .button-orange:hover{
 	cursor: pointer;

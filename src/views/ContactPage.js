@@ -44,6 +44,7 @@ const SupportPage = () => {
 						Číslo účtu: <span>2200997481/2010</span>
 					</p>
 				</section>
+				<iframe className='map-part' frameBorder="0" allowFullScreen="" aria-hidden="false" tabIndex="0" src="https://maps.google.com/maps?q=50.0755,14.4378&hl=es&z=14&amp;output=embed"></iframe>
 			</main>
 		</>
 	);

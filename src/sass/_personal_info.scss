@@ -1,0 +1,27 @@
+.form-body {
+	.summary-part {
+		background-color: #F4F7FF;
+		border: 1px solid #DBE3F2;
+		border-radius: 6px;
+		padding: 23px 16px;
+		margin-bottom: 40px;
+		h3 {
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.summary-item {
+			display: flex;
+			justify-content: space-between;
+			div{
+				font-size: 16px;
+				color: #213F76;
+			}
+			.value{
+				font-weight: bold;
+			}
+		}
+	}
+	.button-orange {
+		margin-top: 30px;
+	}
+}

@@ -51,4 +51,37 @@
 			font-weight: 600;
 		}
 	}
+	.map-part {
+		width: 100%;
+		height: 450px;
+	}
+}
+@media(max-width: 768px){
+	.contact {
+		h1 {
+			font-size: 35px;
+		}
+		.header-text {
+			width: unset;
+		}
+		.contact-content {
+			display: block;
+			margin: auto;
+			img {
+				margin: 15px auto;
+			}
+			.left, .right {
+				text-align: center;
+			}
+			h3 {
+				font-size: 25px;
+			}
+		}
+		.billing {
+			margin-bottom: 30px;
+				h2 {
+				font-size: 25px;
+			}
+		}
+	}
 }

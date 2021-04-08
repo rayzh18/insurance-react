@@ -13,6 +13,10 @@ import ChooseCompanyPage from './views/ChooseCompanyPage';
 import LandingPage from './views/LandingPage';
 import SuccessPage from './views/SuccessPage';
 import ContactPage from './views/ContactPage';
+import PersonalInfoPage from './views/PersonalInfoPage';
+import SummaryPage from './views/SummaryPage';
+import PaymentPage from './views/PaymentPage';
+import GeneralPage from './views/GeneralPage';
 
 const App = () => {
 	return (
@@ -31,6 +35,18 @@ const App = () => {
 					</Route>
 					<Route path='/choose_company'>
 						<ChooseCompanyPage></ChooseCompanyPage>
+					</Route>
+					<Route exact path='/personal_information'>
+						<PersonalInfoPage />
+					</Route>
+					<Route exact path='/summary'>
+						<SummaryPage />
+					</Route>
+					<Route exact path='/payment'>
+						<PaymentPage />
+					</Route>
+					<Route exact path='/general'>
+						<GeneralPage />
 					</Route>
 					<Route exact path='/contact'>
 						<ContactPage />
