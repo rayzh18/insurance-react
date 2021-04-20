@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import rightArrowIcon from '../assets/right-arrow.svg';
 import Modal from 'react-bootstrap/Modal';
+import { useHistory } from "react-router-dom";
 
 const SummaryPage = () => {
 
 	const [isShowModal, setShowModal] = useState(false);
-
+	let history = useHistory();
 	const showModal = () => {
 		setShowModal(true);
 	}
@@ -246,7 +247,7 @@ const SummaryPage = () => {
 			</div>
 			<Modal dialogClassName="summary-modal" show={isShowModal} onHide={() => setShowModal(false)}>
 				<h3>Pojištění je platné až po zaplacení</h3>
-				<button className='button-orange' onClick={() => showModal()}>
+				<button className='button-orange' onClick={() => history.push('/payment')}>
 					Objednat <img src={rightArrowIcon} alt='' />
 				</button>
 			</Modal>

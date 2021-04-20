@@ -6,15 +6,15 @@ import { Provider } from 'react-redux';
 
 import './sass/style.scss';
 
-// ReactDOM.render(
-// 	<Provider store={store}>
-// 		<App />
-// 	</Provider>, 
-// 	document.getElementById('root')
-// );
-
 ReactDOM.render(
-		<App />, 
+	<Provider store={store}>
+		<App />
+	</Provider>, 
 	document.getElementById('root')
 );
+
+// ReactDOM.render(
+// 		<App />, 
+// 	document.getElementById('root')
+// );
 

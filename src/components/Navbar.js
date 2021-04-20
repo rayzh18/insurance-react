@@ -1,17 +1,17 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu'
-
+import { useHistory } from "react-router-dom";
 import calculatorIcon from '../assets/calculator-icon.svg';
 
 const Navbar = () => {
-	console.log('hello');
+	let history = useHistory();
 	return (
 		<>
 			<nav className='navbar'>
 				<div className='navbar-brand'>
-					<a href='/'>
+					<a onClick={() => history.push('/')}>
 						<h2>
-							<span>e</span>cestovka
+							<span>e</span>cestovko
 						</h2>
 					</a>
 					<span className='line'></span>
@@ -19,19 +19,19 @@ const Navbar = () => {
 				</div>
 				<ul>
 					<li>
-						<a href='#'>Proč my</a>
+						<a >Proč my</a>
 					</li>
 					<li>
-						<a href='#'>Co kryje cestovní pojištění</a>
+						<a >Co kryje cestovní pojištění</a>
 					</li>
 					<li>
-						<a href='#'>Co od nás dostanete navíc</a>
+						<a >Co od nás dostanete navíc</a>
 					</li>
 					<li>
-						<a href='#'>Kontakt</a>
+						<a onClick={() => history.push('/contact')}>Kontakt</a>
 					</li>
 					<li>
-						<a href='#'>
+						<a >
 							<button>
 								Spočítat pojistku <img src={calculatorIcon} alt='' />
 							</button>
@@ -42,10 +42,10 @@ const Navbar = () => {
 			<Menu 
 				width={ '90%' }
 			>
-				<a href='' className="menu-item" >Proč my</a>
-				<a href='' className="menu-item" >Co kryje cestovní pojištění</a>
-				<a href='' className="menu-item" >Co od nás dostanete navíc</a>
-				<a href='' className="menu-item">Kontakt</a>
+				<a  className="menu-item" >Proč my</a>
+				<a  className="menu-item" >Co kryje cestovní pojištění</a>
+				<a  className="menu-item" >Co od nás dostanete navíc</a>
+				<a onClick={() => history.push('/contact')} className="menu-item">Kontakt</a>
 			</Menu>
 		</>
 	);

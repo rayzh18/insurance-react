@@ -1,10 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import Select from 'react-select';
 import rightArrowIcon from '../assets/right-arrow.svg';
+import { useHistory } from "react-router-dom";
+import { 
+    set_detail
+} from '../redux/actions';
 
-const TravelDetailPage = () => {
+const TravelDetailPage = ({
+	countries,
+	detail_info,
+	set_detail
+}) => {
 
 	const [count_insured_persons, setCountInsuredPersons] = useState(1);
 	const [age_data, setAgeData] = useState([1]);
+	const [selected_country, setCountry] = useState(detail_info.country);
+    const [travel_from, setTravelFrom] = useState(detail_info.from);
+    const [travel_to, setTravelTo] = useState(detail_info.to);
+    const [travel_type, setTravelType] = useState(detail_info.type);
+
+	let history = useHistory();
 
 	const handleCountInsurance = (operation) => {
 		if(operation == '+') {
@@ -25,8 +41,22 @@ const TravelDetailPage = () => {
 		}
 	}
 
-	const handleClickSecondtab = () => {
-		// history.push('/choose_company')
+
+	const chooseCompany = (event) => {
+        event.preventDefault();
+        set_detail({
+            country: selected_country,
+            from: travel_from,
+            to: travel_to,
+            type: travel_type
+        });
+        history.push('/choose_company');
+    }
+
+	const customSelectorStyles = {
+		indicatorsContainer: (provided, state) => ({
+			...provided, height: '50px'
+		}),
 	}
 
 	const age_components = age_data && 
@@ -50,7 +80,7 @@ const TravelDetailPage = () => {
 					<a className='item-detail checked'>
 						1.Údaje o cestě
 					</a>
-					<a onClick={handleClickSecondtab} className='item-detail'>
+					<a className='item-detail'>
 						2.Výběr pojištovny
 					</a>
 					<a className='item-detail'>
@@ -94,20 +124,39 @@ const TravelDetailPage = () => {
 					<h3 className='m-b-3'>
 						Kam cestujete<span>*</span>
 					</h3>
-					<input className='input-text w-100 p-11' type='text' placeholder='Kam cestujete' />
+					<Select
+						options={countries}
+						value={selected_country}
+						noOptionsMessage={() => (<div>Žádné možnosti</div>)}
+						placeholder="Kam cestujete"
+						styles={customSelectorStyles}
+						onChange={(option) => {setCountry(option)}}
+					/>
 				</div>
 				<div className='item-center'>
 					<div className='form-group w-50 m-r-5'>
 						<h3 className='m-b-3'>
 							Odjezd<span>*</span>
 						</h3>
-						<input className='input-text w-100 p-11' placeholder='Odjezd' type='date' />
+						<input 
+							className='input-text w-100 p-11' 
+							value={travel_from} 
+							onChange={(e) => setTravelFrom(e.target.value)} 
+							placeholder='Odjezd' 
+							type='date' 
+						/>
 					</div>
 					<div className='form-group w-50'>
 						<h3 className='m-b-3'>
 							Návrat<span>*</span>
 						</h3>
-						<input className='input-text w-100 p-11' placeholder='Návrat' type='date' />
+						<input 
+							className='input-text w-100 p-11' 
+							value={travel_to} 
+							onChange={(e) => setTravelTo(e.target.value)} 
+							placeholder='Návrat' 
+							type='date' 
+						/>
 					</div>
 				</div>
 				<div className='trip-type-box'>
@@ -115,22 +164,46 @@ const TravelDetailPage = () => {
 						Typ cesty<span>*</span>
 					</h3>
 					<div className='form-group'>
-						<input type='radio' id='tourist' name='trip_type' className='input-radio' />
+						<input 
+							type='radio' 
+							checked={travel_type === 'tourist'} 
+							value='tourist' 
+							id='tourist'
+							name='trip_type' 
+							className='input-radio' 
+							onChange={e => setTravelType(e.target.value)}
+						/>
 						<label htmlFor='tourist'>
 							Turistická
-									</label>
+						</label>
 					</div>
 					<div className='form-group'>
-						<input type='radio' id='manual-work' name='trip_type' className='input-radio' />
+						<input 
+							type='radio' 
+							checked={travel_type === 'manual-work'} 
+							value='manual-work' 
+							id='manual-work' 
+							name='trip_type' 
+							className='input-radio' 
+							onChange={e => setTravelType(e.target.value)}
+						/>
 						<label htmlFor='manual-work'>
 							Pracovní (manuální práce)
-									</label>
+						</label>
 					</div>
 					<div className='form-group'>
-						<input type='radio' id='administrative-work' name='trip_type' className='input-radio' />
+						<input 
+							type='radio' 
+							checked={travel_type === 'administrative-work'} 
+							value='administrative-work' 
+							id='administrative-work' 
+							name='trip_type' 
+							className='input-radio' 
+							onChange={e => setTravelType(e.target.value)}
+						/>
 						<label htmlFor='administrative-work'>
 							Pracovní (administrativní práce)
-									</label>
+						</label>
 					</div>
 				</div>
 				<div className='trip-type-box'>
@@ -168,7 +241,7 @@ const TravelDetailPage = () => {
 					</label>
 				</div>
 
-				<button className='button-orange m-b-30' type='submit'>
+				<button className='button-orange m-b-30' type='submit' onClick={(e) => chooseCompany(e)}>
 					Pokračovat k výběru nabídek pojišťoven <img src={rightArrowIcon} alt='' />
 				</button>
 			</div>
@@ -176,4 +249,16 @@ const TravelDetailPage = () => {
 	);
 };
 
-export default TravelDetailPage;
+const mapStateToProps = ({country, travelDetail}) => {
+	const countries = country.countries;
+    const detail_info = travelDetail.detail;
+
+	return {countries, detail_info};
+}
+
+export default connect(
+	mapStateToProps,
+	{
+		set_detail
+	}
+)(TravelDetailPage);

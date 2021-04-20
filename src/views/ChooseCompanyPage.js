@@ -10,6 +10,7 @@ import icon_success from '../assets/green-success-icon.svg';
 import icon_failed from '../assets/red-failed-icon.svg'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal';
+import { useHistory } from "react-router-dom";
 
 const ChooseCompanyPage = () => {
 
@@ -18,9 +19,8 @@ const ChooseCompanyPage = () => {
 	const showModal = () => {
 		setShowModal(true);
 	}
-
-	console.log("ChooseCompanyPage");
-
+	let history = useHistory();
+	
 	return (
 		<main className='travel-detail'>
 			<div className='item-center header-part'>
@@ -190,7 +190,7 @@ const ChooseCompanyPage = () => {
 									<img src={img_assistance}></img>
 								</div>
 								<div className='price'>89 Kč</div>
-								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
+								<Button onClick={e => history.push('/personal_information')} variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a onClick={() => showModal()} className='vice'>Vice</a>
 							</div>
 							<div className='w-15 content-center'>
@@ -198,7 +198,7 @@ const ChooseCompanyPage = () => {
 									<img src={img_union}></img>
 								</div>
 								<div className='price'>120 Kč</div>
-								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
+								<Button onClick={e => history.push('/personal_information')} variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
 							<div className='w-15 content-center'>
@@ -206,7 +206,7 @@ const ChooseCompanyPage = () => {
 									<img src={img_slavia}></img>
 								</div>
 								<div className='price'>240 Kč</div>
-								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
+								<Button onClick={e => history.push('/personal_information')} variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
 							<div className='w-15 content-center'>
@@ -214,7 +214,7 @@ const ChooseCompanyPage = () => {
 									<img src={img_uniqa}></img>
 								</div>
 								<div className='price'>310 Kč</div>
-								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
+								<Button onClick={e => history.push('/personal_information')} variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
 							<div className='w-15 content-center'>
@@ -222,7 +222,7 @@ const ChooseCompanyPage = () => {
 									<img src={img_fifth}></img>
 								</div>
 								<div className='price'>390 Kč</div>
-								<Button variant="warning" className='btn-yellow-round'>Vybrat</Button>
+								<Button onClick={e => history.push('/personal_information')} variant="warning" className='btn-yellow-round'>Vybrat</Button>
 								<a className='vice'>Vice</a>
 							</div>
 						</div>

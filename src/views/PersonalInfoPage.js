@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import rightArrowIcon from '../assets/right-arrow.svg';
+import { useHistory } from "react-router-dom";
 
 const PersonalInfoPage = () => {
 
+	let history = useHistory();
 
 	return (
 		<main className='travel-detail'>
@@ -148,7 +150,7 @@ const PersonalInfoPage = () => {
 					</h3>
 					<input className='input-text w-100 p-11' type='text' placeholder='Telefon' />
 				</div>
-				<button className='button-orange m-b-30' type='submit'>
+				<button onClick={() => history.push('/summary')} className='button-orange m-b-30' type='submit'>
 					Pokračovat k výběru nabídek pojišťoven <img src={rightArrowIcon} alt='' />
 				</button>
 			</div>

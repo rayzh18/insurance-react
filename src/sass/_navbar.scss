@@ -5,6 +5,10 @@
 	align-items: center;
 	border-bottom: 1px solid $grey;
 
+	a:hover {
+		cursor: pointer;
+	}
+
 	&-brand {
 		display: flex;
 		align-items: center;

@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { 
+    set_countries, 
+    set_detail
+} from '../redux/actions';
 
 import wrenchIcon from '../assets/wrench-icon.svg';
 import calculatorIcon from '../assets/calculator-icon.svg';
@@ -11,11 +15,19 @@ import carIcon from '../assets/car-icon.svg';
 import pawIcon from '../assets/paw-icon.svg';
 import { useHistory } from "react-router-dom";
 import Select from 'react-select';
+import { connect } from 'react-redux';
 
-const LandingPage = () => {
+const LandingPage = ({
+    countries,
+    set_countries,
+    set_detail
+}) => {
 
 	const [countries_data, setCountriesData] = useState([]);
 	const [selected_country, setCountry] = useState(null);
+    const [travel_from, setTravelFrom] = useState('');
+    const [travel_to, setTravelTo] = useState('');
+    const [travel_type, setTravelType] = useState('');
 
     let history = useHistory();
 
@@ -860,12 +872,17 @@ const LandingPage = () => {
 
     const goToDetail = (event) => {
         event.preventDefault();
+        set_detail({
+            country: selected_country,
+            from: travel_from,
+            to: travel_to,
+            type: travel_type
+        });
         history.push('/travel_detail');
-        console.log('gotodetail');
     }
 
 	useEffect(() => {
-		setCountriesData(temp_countries_data.map((item) => ({ value: item.id, label: item.inputValue })));
+        set_countries(temp_countries_data.map((item) => ({ value: item.id, label: item.inputValue })));
 	}, []);
 
 
@@ -919,10 +936,11 @@ const LandingPage = () => {
 									Kam cestujete<span>*</span>
 								</h3>
 								<Select
-									options={countries_data}
+									options={countries}
+                                    noOptionsMessage={() => (<div>Žádné možnosti</div>)}
 									placeholder="Kam cestujete"
 									styles={customSelectorStyles}
-									onChange={(option) => {console.log('selected option==>', option); setCountry(option.value)}}
+									onChange={(option) => {setCountry(option)}}
 								/>
 							</div>
 							<div className='item-center'>
@@ -930,13 +948,25 @@ const LandingPage = () => {
 									<h3 className='m-b-3'>
 										Odjezd<span>*</span>
 									</h3>
-									<input className='input-text w-100 p-11' placeholder='Odjezd' type='date' />
+									<input 
+                                        className='input-text w-100 p-11' 
+                                        value={travel_from} 
+                                        onChange={(e) => setTravelFrom(e.target.value)} 
+                                        placeholder='Odjezd' 
+                                        type='date' 
+                                    />
 								</div>
 								<div className='form-group w-50'>
 									<h3 className='m-b-3'>
 										Návrat<span>*</span>
 									</h3>
-									<input className='input-text w-100 p-11' placeholder='Návrat' type='date' />
+									<input 
+                                        className='input-text w-100 p-11' 
+                                        value={travel_to} 
+                                        onChange={(e) => setTravelTo(e.target.value)} 
+                                        placeholder='Návrat' 
+                                        type='date' 
+                                    />
 								</div>
 							</div>
 							<div className='trip-type-box'>
@@ -944,19 +974,43 @@ const LandingPage = () => {
 									Typ cesty<span>*</span>
 								</h3>
 								<div className='form-group'>
-									<input type='radio' id='tourist' name='trip_type' className='input-radio' />
+									<input 
+                                        type='radio' 
+                                        checked={travel_type === 'tourist'} 
+                                        value='tourist' 
+                                        id='tourist'
+                                        name='trip_type' 
+                                        className='input-radio' 
+                                        onChange={e => setTravelType(e.target.value)}
+                                    />
 									<label htmlFor='tourist'>
 										Turistická
 									</label>
 								</div>
 								<div className='form-group'>
-									<input type='radio' id='manual-work' name='trip_type' className='input-radio' />
+									<input 
+                                        type='radio' 
+                                        checked={travel_type === 'manual-work'} 
+                                        value='manual-work' 
+                                        id='manual-work' 
+                                        name='trip_type' 
+                                        className='input-radio' 
+                                        onChange={e => setTravelType(e.target.value)}
+                                    />
 									<label htmlFor='manual-work'>
 										Pracovní (manuální práce)
 									</label>
 								</div>
 								<div className='form-group'>
-									<input type='radio' id='administrative-work' name='trip_type' className='input-radio' />
+									<input 
+                                        type='radio' 
+                                        checked={travel_type === 'administrative-work'} 
+                                        value='administrative-work' 
+                                        id='administrative-work' 
+                                        name='trip_type' 
+                                        className='input-radio' 
+                                        onChange={e => setTravelType(e.target.value)}
+                                    />
 									<label htmlFor='administrative-work'>
 										Pracovní (administrativní práce)
 									</label>
@@ -1024,4 +1078,19 @@ const LandingPage = () => {
 	);
 };
 
-export default LandingPage;
+
+const mapStateToProps = ({
+    country,
+}) => {
+    const countries = country.countries;
+    return { countries };
+  };
+
+
+export default connect( 
+    mapStateToProps, 
+    { 
+        set_countries,
+        set_detail
+    }
+)(LandingPage);
