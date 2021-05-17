@@ -908,14 +908,6 @@ const LandingPage = ({
 						</ul>
 
 						<div className='landing-main-section-icons'>
-							<div className='landing-main-icon-wrapper'>
-								<div className='landing-main-icon'>
-									<img src={carIcon} alt='' />
-								</div>
-								<p className='info1'>
-									Pojištění extrémního sportu jízdy po dálnici D1 (v ceně)
-								</p>
-							</div>
 
 							<div className='landing-main-icon-wrapper'>
 								<div className='landing-main-icon'>

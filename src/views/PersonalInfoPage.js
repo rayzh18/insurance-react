@@ -7,7 +7,7 @@ const PersonalInfoPage = () => {
 	let history = useHistory();
 
 	return (
-		<main className='travel-detail'>
+		<main className='travel-detail personal-information'>
 			<div className='item-center header-part'>
 				<h3 className='title'>Cestovní pojištění online</h3>
 			</div>
@@ -56,7 +56,7 @@ const PersonalInfoPage = () => {
 			<div className='detail-main personal-info-contain form-body'>
 				<div className='title item-center'>
 					<span>3.</span>
-					<h3>Osobní údaje</h3>
+					<h3>Osobní údaje pojistníka</h3>
 				</div>
 				<div className='summary-part'>
 					<h3>Shrnutí</h3>
@@ -72,12 +72,6 @@ const PersonalInfoPage = () => {
 						<div>Typ</div>
 						<div className='value'>Komfort</div>
 					</div>
-				</div>
-				<div className='form-group'>
-					<h3 className='m-b-3'>
-						Subjekt<span>*</span>
-					</h3>
-					<input className='input-text w-100 p-11' type='text' placeholder='Fyzická osoba' />
 				</div>
 				<div className='form-group'>
 					<h3 className='m-b-3'>
@@ -151,7 +145,7 @@ const PersonalInfoPage = () => {
 					<input className='input-text w-100 p-11' type='text' placeholder='Telefon' />
 				</div>
 				<button onClick={() => history.push('/summary')} className='button-orange m-b-30' type='submit'>
-					Pokračovat k výběru nabídek pojišťoven <img src={rightArrowIcon} alt='' />
+				Pokračovat k schrnutí <img src={rightArrowIcon} alt='' />
 				</button>
 			</div>
 		</main>

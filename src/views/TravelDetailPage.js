@@ -14,7 +14,7 @@ const TravelDetailPage = ({
 }) => {
 
 	const [count_insured_persons, setCountInsuredPersons] = useState(1);
-	const [age_data, setAgeData] = useState([1]);
+	const [age_data, setAgeData] = useState([18]);
 	const [selected_country, setCountry] = useState(detail_info.country);
     const [travel_from, setTravelFrom] = useState(detail_info.from);
     const [travel_to, setTravelTo] = useState(detail_info.to);
@@ -24,7 +24,7 @@ const TravelDetailPage = ({
 
 	const handleCountInsurance = (operation) => {
 		if(operation == '+') {
-			setAgeData([...age_data, 1]);
+			setAgeData([...age_data, 18]);
 			setCountInsuredPersons(count_insured_persons + 1);
 		}
 		else if(operation == '-' && count_insured_persons > 1) {
