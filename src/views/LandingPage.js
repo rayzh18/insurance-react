@@ -31,6 +31,14 @@ const LandingPage = ({
     const [travel_to, setTravelTo] = useState('');
     const [travel_type, setTravelType] = useState('');
 
+    const getTomorrow = () => {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        let result = tomorrow.toISOString().slice(0, 10);
+        return result;
+    }
+
     let history = useHistory();
 
 	const options = [
@@ -875,13 +883,6 @@ const LandingPage = ({
     const goToDetail = (event) => {
         event.preventDefault();
 
-        console.log('input data ====>', {
-            country: selected_country,
-            from: travel_from,
-            to: travel_to,
-            type: travel_type
-        });
-
         if(
             selected_country == null ||
             travel_from == '' ||
@@ -990,7 +991,7 @@ const LandingPage = ({
                                         value={travel_from} 
                                         onChange={(e) => setTravelFrom(e.target.value)} 
                                         placeholder='Odjezd' 
-                                        min={new Date().toISOString().slice(0, 10)}
+                                        min={getTomorrow()}
                                         type='date' 
                                     />
 								</div>

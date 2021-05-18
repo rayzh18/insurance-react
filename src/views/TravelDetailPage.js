@@ -217,7 +217,7 @@ const TravelDetailPage = ({
 				</div>
 				<div className='trip-type-box'>
 					<h3 className='m-b-3'>
-						Sport<span>*</span>
+						Sport
 					</h3>
 					<div className='form-group'>
 						<label className='checkbox-container' htmlFor='recreational'>Rekreační

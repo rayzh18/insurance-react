@@ -23,6 +23,23 @@
 			font-weight: bold;
 		}
 	}
+	.title-download {
+		font-family: $primary-font;
+		font-size: 24px;
+		letter-spacing: 0px;
+		color: #213F76;
+	}
+	.download-item {
+		font-family: $primary-font;
+		font-size: 16px;
+		letter-spacing: 0px;
+		color: #30B6E8;
+	}
+}
+.contract-doc-page {
+	.form-group {
+		margin: 25px auto;
+	}
 }
 
 @media(max-width: 768px){

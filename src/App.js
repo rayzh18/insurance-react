@@ -17,6 +17,7 @@ import PersonalInfoPage from './views/PersonalInfoPage';
 import SummaryPage from './views/SummaryPage';
 import PaymentPage from './views/PaymentPage';
 import GeneralPage from './views/GeneralPage';
+import ContractDocPage from './views/ContractDocPage';
 import ReactNotification from 'react-notifications-component';
 
 
@@ -53,6 +54,9 @@ const App = () => {
 					</Route>
 					<Route exact path='/contact'>
 						<ContactPage />
+					</Route>
+					<Route exact path='/contract_doc'>
+						<ContractDocPage />
 					</Route>
 				</Switch>
 				<Footer />

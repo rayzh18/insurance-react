@@ -28,6 +28,9 @@ const ChooseCompanyPage = ({
 	const [travel_from, setTravelFrom] = useState(detail_info.from);
     const [travel_to, setTravelTo] = useState(detail_info.to);
 	const [travel_type, setTravelType] = useState(detail_info.type);
+	const [is_recreational, setRecreational] = useState(false);
+	const [is_risky, setRisky] = useState(false);
+	const [is_extreme, setExtreme] = useState(false);
 
 	const showModal = () => {
 		setShowModal(true);
@@ -150,19 +153,19 @@ const ChooseCompanyPage = ({
 													Typ cesty<span>*</span>
 												</h3>
 												<div className=''>
-													<input type='radio' id='tourist' name='trip_type' className='input-radio' checked={travel_type === 'tourist'} onChange={e => setTravelType(e.target.value)}/>
+													<input type='radio' value='tourist' id='tourist' name='trip_type' className='input-radio' checked={travel_type === 'tourist'} onChange={e => setTravelType(e.target.value)}/>
 													<label htmlFor='tourist'>
 														Turistická
 													</label>
 												</div>
 												<div className=''>
-													<input type='radio' id='manual-work' name='trip_type' className='input-radio' checked={travel_type === 'manual-work'} onChange={e => setTravelType(e.target.value)}/>
+													<input type='radio' id='manual-work' value='manual-work' name='trip_type' className='input-radio' checked={travel_type === 'manual-work'} onChange={e => setTravelType(e.target.value)}/>
 													<label htmlFor='manual-work'>
 														Pracovní (manuální práce)
 													</label>
 												</div>
 												<div className=''>
-													<input type='radio' id='administrative-work' name='trip_type' className='input-radio' checked={travel_type === 'administrative-work'} onChange={e => setTravelType(e.target.value)}/>
+													<input type='radio' id='administrative-work' value='administrative-work' name='trip_type' className='input-radio' checked={travel_type === 'administrative-work'} onChange={e => setTravelType(e.target.value)}/>
 													<label htmlFor='administrative-work'>
 														Pracovní (administrativní práce)
 													</label>
@@ -170,24 +173,45 @@ const ChooseCompanyPage = ({
 											</div>
 											<div className='trip-type-box'>
 												<h3 className='m-b-3'>
-													Sport<span>*</span>
+													Sport
 												</h3>
-												<div className=''>
-													<input type='radio' id='recreational' name='sport_type' className='input-radio' />
-													<label htmlFor='recreational'>
-														Rekreační
+												<div className='form-group'>
+													<label className='checkbox-container' htmlFor='recreational'>Rekreační
+														<input 
+															type='checkbox' 
+															id='recreational' 
+															name='' 
+															className='input-checkbox' 
+															value={is_recreational}
+															onChange={e => setRecreational(e.target.checked)}	
+														/>
+														<span className='checkmark'></span>
 													</label>
 												</div>
-												<div className=''>
-													<input type='radio' id='risky' name='sport_type' className='input-radio' />
-													<label htmlFor='risky'>
-														Rizikový
+												<div className='form-group'>
+													<label className='checkbox-container' htmlFor='risky'>Rizikový
+														<input 
+															type='checkbox' 
+															id='risky' 
+															name='' 
+															className='input-checkbox' 
+															value={is_risky}
+															onChange={e => setRisky(e.target.checked)}	
+														/>
+														<span className='checkmark'></span>
 													</label>
 												</div>
-												<div className=''>
-													<input type='radio' id='extreme' name='sport_type' className='input-radio' />
-													<label htmlFor='extreme'>
-														Extrémní
+												<div className='form-group'>
+													<label className='checkbox-container' htmlFor='extreme'>Extrémní
+														<input 
+															type='checkbox' 
+															id='extreme' 
+															name='' 
+															className='input-checkbox' 
+															value={is_extreme}
+															onChange={e => setExtreme(e.target.checked)}	
+														/>
+														<span className='checkmark'></span>
 													</label>
 												</div>
 											</div>
