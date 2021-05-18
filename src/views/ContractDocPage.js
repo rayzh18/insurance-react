@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 import { connect } from  'react-redux'
 
 const ContractDocPage = () => {
@@ -32,6 +33,10 @@ const ContractDocPage = () => {
 						</h3>
 						<input className='input-text w-100 p-11' type='text' placeholder='Telefonní číslo' value={phone} onChange={(e) => setPhone(e.target.value)}/>
 					</div>
+					<ReCAPTCHA
+						sitekey="6Ld5f9oaAAAAAHQxO8QYafeXmJvkCb3dfbfNg9dv"
+						onChange={() => {}}
+					/>
 					<div className='title-download'>Dokumenty ke stáhnutí</div>
 					<a className='download-item' href='#'>Smlouva 312.pdf</a><br></br>
 					<a className='download-item' href='#'>Pojistka 7381.pdf</a>
