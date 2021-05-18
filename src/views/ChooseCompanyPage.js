@@ -28,9 +28,8 @@ const ChooseCompanyPage = ({
 	const [travel_from, setTravelFrom] = useState(detail_info.from);
     const [travel_to, setTravelTo] = useState(detail_info.to);
 	const [travel_type, setTravelType] = useState(detail_info.type);
-	const [is_recreational, setRecreational] = useState(false);
-	const [is_risky, setRisky] = useState(false);
-	const [is_extreme, setExtreme] = useState(false);
+	const [is_recreational, setRecreational] = useState(detail_info.recreational);
+	const [is_risky, setRisky] = useState(detail_info.risky);
 
 	const showModal = () => {
 		setShowModal(true);
@@ -183,7 +182,8 @@ const ChooseCompanyPage = ({
 															name='' 
 															className='input-checkbox' 
 															value={is_recreational}
-															onChange={e => setRecreational(e.target.checked)}	
+															onChange={e => setRecreational(e.target.checked)}
+															checked={is_recreational}
 														/>
 														<span className='checkmark'></span>
 													</label>
@@ -197,19 +197,7 @@ const ChooseCompanyPage = ({
 															className='input-checkbox' 
 															value={is_risky}
 															onChange={e => setRisky(e.target.checked)}	
-														/>
-														<span className='checkmark'></span>
-													</label>
-												</div>
-												<div className='form-group'>
-													<label className='checkbox-container' htmlFor='extreme'>Extrémní
-														<input 
-															type='checkbox' 
-															id='extreme' 
-															name='' 
-															className='input-checkbox' 
-															value={is_extreme}
-															onChange={e => setExtreme(e.target.checked)}	
+															checked={is_risky}
 														/>
 														<span className='checkmark'></span>
 													</label>
