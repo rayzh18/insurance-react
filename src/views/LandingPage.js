@@ -3,6 +3,8 @@ import {
     set_countries, 
     set_detail
 } from '../redux/actions';
+import 'react-notifications-component/dist/theme.css';
+import { store } from 'react-notifications-component';
 
 import wrenchIcon from '../assets/wrench-icon.svg';
 import calculatorIcon from '../assets/calculator-icon.svg';
@@ -872,13 +874,56 @@ const LandingPage = ({
 
     const goToDetail = (event) => {
         event.preventDefault();
-        set_detail({
+
+        console.log('input data ====>', {
             country: selected_country,
             from: travel_from,
             to: travel_to,
             type: travel_type
         });
-        history.push('/travel_detail');
+
+        if(
+            selected_country == null ||
+            travel_from == '' ||
+            travel_to == '' ||
+            travel_type == ''
+        ) {
+            store.addNotification({
+                title: "Varování",
+                message: "Vyplňte prosím požadované položky.",
+                type: "warning",
+                insert: "top",
+                container: "top-right",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 3000,
+                    onScreen: true
+                }
+            });
+        } else if(travel_from > travel_to) {
+            store.addNotification({
+                title: "Varování",
+                message: "Návrat date should be later than odjezd date.",
+                type: "warning",
+                insert: "top",
+                container: "top-right",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 3000,
+                    onScreen: true
+                }
+            });
+        } else {
+            set_detail({
+                country: selected_country,
+                from: travel_from,
+                to: travel_to,
+                type: travel_type
+            });
+            history.push('/travel_detail');
+        }
     }
 
 	useEffect(() => {
@@ -945,6 +990,7 @@ const LandingPage = ({
                                         value={travel_from} 
                                         onChange={(e) => setTravelFrom(e.target.value)} 
                                         placeholder='Odjezd' 
+                                        min={new Date().toISOString().slice(0, 10)}
                                         type='date' 
                                     />
 								</div>
@@ -957,6 +1003,7 @@ const LandingPage = ({
                                         value={travel_to} 
                                         onChange={(e) => setTravelTo(e.target.value)} 
                                         placeholder='Návrat' 
+                                        min={travel_from}
                                         type='date' 
                                     />
 								</div>

@@ -19,6 +19,9 @@ const TravelDetailPage = ({
     const [travel_from, setTravelFrom] = useState(detail_info.from);
     const [travel_to, setTravelTo] = useState(detail_info.to);
     const [travel_type, setTravelType] = useState(detail_info.type);
+	const [is_recreational, setRecreational] = useState(false);
+	const [is_risky, setRisky] = useState(false);
+	const [is_family, setFamily] = useState(false);
 
 	let history = useHistory();
 
@@ -48,7 +51,11 @@ const TravelDetailPage = ({
             country: selected_country,
             from: travel_from,
             to: travel_to,
-            type: travel_type
+            type: travel_type,
+			recreational: is_recreational,
+			risky: is_risky,
+			family: is_family,
+			users_data: age_data,
         });
         history.push('/choose_company');
     }
@@ -142,6 +149,7 @@ const TravelDetailPage = ({
 							className='input-text w-100 p-11' 
 							value={travel_from} 
 							onChange={(e) => setTravelFrom(e.target.value)} 
+							min={new Date().toISOString().slice(0, 10)}
 							placeholder='Odjezd' 
 							type='date' 
 						/>
@@ -153,6 +161,7 @@ const TravelDetailPage = ({
 						<input 
 							className='input-text w-100 p-11' 
 							value={travel_to} 
+							min={travel_from}
 							onChange={(e) => setTravelTo(e.target.value)} 
 							placeholder='Návrat' 
 							type='date' 
@@ -212,13 +221,27 @@ const TravelDetailPage = ({
 					</h3>
 					<div className='form-group'>
 						<label className='checkbox-container' htmlFor='recreational'>Rekreační
-							<input type='checkbox' id='recreational' name='' className='input-checkbox' />
+							<input 
+								type='checkbox' 
+								id='recreational' 
+								name='' 
+								className='input-checkbox' 
+								value={is_recreational}
+								onChange={e => setRecreational(e.target.checked)}	
+							/>
 							<span className='checkmark'></span>
 						</label>
 					</div>
 					<div className='form-group'>
 						<label className='checkbox-container' htmlFor='risky'>Rizikový
-							<input type='checkbox' id='risky' name='' className='input-checkbox' />
+							<input 
+								type='checkbox' 
+								id='risky' 
+								name='' 
+								className='input-checkbox' 
+								value={is_risky}
+								onChange={e => setRisky(e.target.checked)}	
+							/>
 							<span className='checkmark'></span>
 						</label>
 					</div>
@@ -236,7 +259,14 @@ const TravelDetailPage = ({
 				{age_components}
 				<div className='form-group'>
 					<label className='checkbox-container' htmlFor='one-family'>Tvoříme jednu rodinu
-						<input type='checkbox' id='one-family' name='' className='input-checkbox' />
+						<input 
+							type='checkbox' 
+							id='one-family' 
+							name='' 
+							className='input-checkbox' 
+							value={is_family}
+							onChange={e => setFamily(e.target.checked)}	
+						/>
 						<span className='checkmark'></span>
 					</label>
 				</div>

@@ -9,7 +9,10 @@ const initialState = {
     sport: "",
     countOfTravelers: 1,
     ageOfTravelers: [],
-    family: false
+    family: false,
+    recreational: false,
+    risky: false,
+    users_data: [],
   }
 };
 

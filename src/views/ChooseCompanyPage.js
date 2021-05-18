@@ -11,15 +11,35 @@ import icon_failed from '../assets/red-failed-icon.svg'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal';
 import { useHistory } from "react-router-dom";
+import Select from 'react-select';
+import { connect } from 'react-redux';
+import { 
+    set_detail
+} from '../redux/actions';
 
-const ChooseCompanyPage = () => {
+const ChooseCompanyPage = ({
+	countries,
+	detail_info,
+	set_detail
+}) => {
 
 	const [isShowModal, setShowModal] = useState(false);
+	const [selected_country, setCountry] = useState(detail_info.country);
+	const [travel_from, setTravelFrom] = useState(detail_info.from);
+    const [travel_to, setTravelTo] = useState(detail_info.to);
+	const [travel_type, setTravelType] = useState(detail_info.type);
 
 	const showModal = () => {
 		setShowModal(true);
 	}
 	let history = useHistory();
+
+	const customSelectorStyles = {
+		indicatorsContainer: (provided, state) => ({
+			...provided, height: '50px'
+		}),
+	}
+
 	
 	return (
 		<main className='travel-detail'>
@@ -90,20 +110,39 @@ const ChooseCompanyPage = () => {
 												<h3 className='m-b-3'>
 													Kam cestujete<span>*</span>
 												</h3>
-												<input className='input-text w-100 p-11' type='text' placeholder='Kam cestujete' />
+												<Select
+													options={countries}
+													value={selected_country}
+													noOptionsMessage={() => (<div>Žádné možnosti</div>)}
+													placeholder="Kam cestujete"
+													styles={customSelectorStyles}
+													onChange={(option) => {setCountry(option)}}
+												/>
 											</div>
 											<div className='item-center'>
 												<div className='form-group w-50 m-r-5'>
 													<h3 className='m-b-3'>
 														Odjezd<span>*</span>
 													</h3>
-													<input className='input-text w-100 p-11 small' placeholder='Odjezd' type='date' />
+													<input 
+														value={travel_from} 
+														onChange={(e) => setTravelFrom(e.target.value)} 
+														min={new Date().toISOString().slice(0, 10)}
+														className='input-text w-100 p-11 small' 
+														placeholder='Odjezd' 
+														type='date' />
 												</div>
 												<div className='form-group w-50'>
 													<h3 className='m-b-3'>
 														Návrat<span>*</span>
 													</h3>
-													<input className='input-text w-100 p-11 small' placeholder='Návrat' type='date' />
+													<input 
+														value={travel_to} 
+														onChange={(e) => setTravelTo(e.target.value)} 
+														min={travel_from}
+														className='input-text w-100 p-11 small' 
+														placeholder='Návrat' 
+														type='date' />
 												</div>
 											</div>
 											<div className='trip-type-box'>
@@ -111,19 +150,19 @@ const ChooseCompanyPage = () => {
 													Typ cesty<span>*</span>
 												</h3>
 												<div className=''>
-													<input type='radio' id='tourist' name='trip_type' className='input-radio' />
+													<input type='radio' id='tourist' name='trip_type' className='input-radio' checked={travel_type === 'tourist'} onChange={e => setTravelType(e.target.value)}/>
 													<label htmlFor='tourist'>
 														Turistická
 													</label>
 												</div>
 												<div className=''>
-													<input type='radio' id='manual-work' name='trip_type' className='input-radio' />
+													<input type='radio' id='manual-work' name='trip_type' className='input-radio' checked={travel_type === 'manual-work'} onChange={e => setTravelType(e.target.value)}/>
 													<label htmlFor='manual-work'>
 														Pracovní (manuální práce)
 													</label>
 												</div>
 												<div className=''>
-													<input type='radio' id='administrative-work' name='trip_type' className='input-radio' />
+													<input type='radio' id='administrative-work' name='trip_type' className='input-radio' checked={travel_type === 'administrative-work'} onChange={e => setTravelType(e.target.value)}/>
 													<label htmlFor='administrative-work'>
 														Pracovní (administrativní práce)
 													</label>
@@ -598,4 +637,16 @@ const ChooseCompanyPage = () => {
 	);
 };
 
-export default ChooseCompanyPage;
+const mapStateToProps = ({country, travelDetail}) => {
+	const countries = country.countries;
+    const detail_info = travelDetail.detail;
+
+	return {countries, detail_info};
+}
+
+export default connect(
+	mapStateToProps,
+	{
+		set_detail
+	}
+)(ChooseCompanyPage);
