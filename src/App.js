@@ -19,6 +19,7 @@ import PaymentPage from './views/PaymentPage';
 import GeneralPage from './views/GeneralPage';
 import ContractDocPage from './views/ContractDocPage';
 import ReactNotification from 'react-notifications-component';
+import EmailTemplate from './components/EmailTemplate';
 
 
 const App = () => {
@@ -57,6 +58,9 @@ const App = () => {
 					</Route>
 					<Route exact path='/contract_doc'>
 						<ContractDocPage />
+					</Route>
+					<Route exact path='/email'>
+						<EmailTemplate />
 					</Route>
 				</Switch>
 				<Footer />

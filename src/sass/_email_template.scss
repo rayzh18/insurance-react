@@ -1,0 +1,92 @@
+.email-template{
+    max-width:633px;
+    min-height: 537px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    border: 1px solid rgb(231, 230, 230);
+    border-radius: 10px;
+
+    .email-header{
+        display:flex;
+        background-color: $dark-blue;
+        padding: 10px;
+        border-radius: 6px;
+        h1{
+            color: $white;
+            size: 26px;
+            font-family: $logo-font;
+            border-right: 1px solid rgba(255, 255, 255, 0.6);
+            margin: 10px;
+            padding-right: 10px;
+            span{
+                color: $blue;
+            }
+        }
+        h2{
+            font-size: 18px;
+            color: $white;
+            opacity: 60%;
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+
+    .email-body{
+        padding: 10px;
+        margin: 10px;
+        color: $dark-blue;
+        h2{
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: 600;
+
+        }
+    }
+
+    .email-template-contacts{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        padding: 10px;
+        background-color: #EAF1FF;
+    
+        .etc-group{
+            text-align: center;
+            padding: 10px 0;
+            margin:5px 15px 0px 15px;
+            text-align: left;
+            
+            h2{            
+              font-size: 16px;
+              font-weight: 600;
+              color: $dark-blue;
+            }
+            a{
+                color: $blue;
+            }
+            p{
+                color: #768DB8;
+            }
+           
+        }
+    }
+
+    .email-footer{
+        text-align: center;
+        padding-top: 10px;
+        font-size:12px;
+        a{
+            text-decoration: underline;
+            color: $dark-blue ;
+        }
+        
+    }
+
+@media(max-width: 560px){
+    .email-template-contacts{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+}
+
